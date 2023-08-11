@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Lista de perros</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Lista de perros</h1>
+<a href="{% url 'crear_perro' %}">Crear perro</a>
+<br>
+<div class="container text-center">
+  <div class="row">
+          {% for perro in perros %}
+          <div class="col-sm-6 align-items-center">
+              <div class="card-body">
+              <img src="{{perro.foto.url}}" class="" width="200px" >
+              <br>  
+              <h>Nombre: </h>{{perro.nombre}}
+              <br>
+              <h>Raza: </h>{{perro.raza}}
+              <br>
+              <h>Edad: </h>{{perro.edad}}<h> Años</h>
+              <br>
+              <a href="{% url 'ver_perro' perro.id %}"><i class="bi bi-eye"></i></a>
+              {% if user.id == perro.usuario.id %}
+              <a href="{% url 'editar_perro' perro.id %}"><i class="bi bi-pencil-fill"></i></a>
+              <a href="{% url 'eliminar_perro' perro.id %}"><i class="bi bi-trash text-danger"></i></a>
+              <br>
+              <br>
+              <br>
+              <br>
+              {% endif %}
+              </div>
+          </div>
+          {% endfor %}
+  </div>
+</div>
+
+
+{% endblock contenido %}

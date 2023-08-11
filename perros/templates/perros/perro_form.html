@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Guardar" />
+</form>
+
+<br>
+<a href="{% url 'lista_perros' %}">Volver lista</a>
+
+<script>
+  var name = "{{ user.id }}";
+  document.getElementById("usuario_id").value = name;
+</script>
+
+{% endblock contenido %}

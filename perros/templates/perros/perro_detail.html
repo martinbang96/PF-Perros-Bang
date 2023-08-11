@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Nombre:</strong> {{object.nombre}}
+</p>
+<p>
+  <strong>Raza:</strong> {{object.raza}}
+</p>
+<p>
+  <strong>Edad:</strong> {{object.edad}}
+</p>
+<p>
+  <strong>Telefono:</strong> {{object.telefono}}
+</p>
+<p>
+  <strong>Duenio:</strong> {{object.duenio}}
+</p>
+<p>
+  {% if perro.foto %}
+    <p><img src="{{perro.foto.url}}" alt="" style="height:300px;"></p>
+{% endif %}
+</p>
+
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not perro.comentarios.all %}
+        No han comentado este anuncio
+    {% else %}
+        {% for comentario in perro.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' perro.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+
+<br>
+<a href="{% url 'lista_perros' %}">Volver lista</a>
+<a href="{% url 'editar_perro' object.id %}">Editar</a>
+
+{% endblock contenido %}

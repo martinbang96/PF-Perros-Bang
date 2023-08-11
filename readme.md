@@ -1,4 +1,10 @@
-# ProyectoCoder
+# Centro de Adopcion
+
+# VIDEO DEMO
+LINK : https://www.loom.com/share/38499ec5851b484aab54c473cfb0df20?sid=150b3f9b-e07a-4847-b986-4ede81b4fb10
+
+# TABLA DE PRUEBAS MANUALES/FUNCIONALES
+https://drive.google.com/drive/folders/1BNZ9DS8uLLN8pLmoRPDmFxgJQAf453I8?usp=sharing
 
 ## Instrucciones instalar proyecto en local
 + Crea una carpeta contenedora madre
@@ -23,8 +29,19 @@ python manage.py createsuperuser
 
 # Superusuario de pruebas
 username:admin
-contraseña:sup3r123!
+contraseña:admin123
 
 # Usuarios normales
-username:mariaperez
-contraseña:sup3r123!
+Crear usuarios desde el boton REGISTRAR
+
+# Inicio
+Muestra la portada al refugio de perros
+
+# Perros en adopcion
+Lista de perros.
+No se podra ver si no se esta logueado.
+Los perros solo podran ser modificados o borrados por el usuario creador
+
+# Sobre Mi
+Informacion sobre el creador del proyecto
+

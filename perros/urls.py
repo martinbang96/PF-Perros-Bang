@@ -13,5 +13,4 @@ urlpatterns = [
     path('editar-perro/<int:pk>/', PerroUpdateView.as_view(), name="editar_perro"),
     path('eliminar-perro/<int:pk>/', PerroDeleteView.as_view(), name="eliminar_perro"),
     path('sobre_mi/',sobre_mi,name="sobre_mi"),
-    
 ]
